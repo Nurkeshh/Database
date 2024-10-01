@@ -1,26 +1,25 @@
 CREATE DATABASE lab3;
 
-\c lab3;
-
 CREATE TABLE departments (
-    department_id SERIAL PRIMARY KEY,
-    department_name VARCHAR(100),
-    budget NUMERIC(10, 2)
+  code INTEGER PRIMARY KEY,
+  name VARCHAR(255) NOT NULL ,
+  budget DECIMAL NOT NULL
 );
 
 CREATE TABLE employees (
-    employee_id SERIAL PRIMARY KEY,
-    first_name VARCHAR(50),
-    last_name VARCHAR(50),
-    department_id INT REFERENCES departments(department_id),
-    city VARCHAR(50)
+  ssn INTEGER PRIMARY KEY,
+  name VARCHAR(255) NOT NULL ,
+  lastname VARCHAR(255) NOT NULL ,
+  department INTEGER NOT NULL ,
+  city VARCHAR(255),
+  FOREIGN KEY (department) REFERENCES departments(code)
 );
 
 CREATE TABLE customers (
-    customer_id SERIAL PRIMARY KEY,
-    first_name VARCHAR(50),
-    last_name VARCHAR(50),
-    city VARCHAR(50)
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL ,
+  lastname VARCHAR(255) NOT NULL ,
+  city VARCHAR(255)
 );
 
 INSERT INTO departments (department_name, budget) VALUES
