@@ -17,7 +17,7 @@ CREATE TABLE departments(
 
 CREATE TABLE employees(
     employee_id SERIAL PRIMARY KEY,
-    firs_name VARCHAR(50),
+    first_name VARCHAR(50),
     last_name VARCHAR(50),
     email VARCHAR(50),
     phone_number VARCHAR(25),
@@ -43,7 +43,7 @@ JOIN departments d ON e.department_id = d.department_id
 JOIN locations l ON d.location_id = l.location_id;
 
 
-SELECT d.name
+SELECT *
 FROM employees e
 RIGHT JOIN departments d ON e.department_id = d.department_id;
 
