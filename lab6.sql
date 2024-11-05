@@ -1,3 +1,5 @@
+CREATE DATABASE lab6;
+
 CREATE TABLE locations(
     location_id SERIAL PRIMARY KEY,
     street_address VARCHAR(25),
